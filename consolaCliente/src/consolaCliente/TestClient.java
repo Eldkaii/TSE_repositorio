@@ -9,8 +9,6 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
-import org.jboss.as.quickstarts.ejb.remote.stateless.RemoteCalculator;
-
 import datatypes.DTRecursos;
 import servletsNegocios.NegocioRecursosRemote;
 
