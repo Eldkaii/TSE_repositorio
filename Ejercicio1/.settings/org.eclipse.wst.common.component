@@ -1,32 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
-                
+                        
+    
+    
     
     
     <wb-module deploy-name="Ejercicio1">
-                                
+                                                
+        
+        
         
         
         <wb-resource deploy-path="/" source-path="/EarContent" tag="defaultRootSource"/>
-                                
+                                                
+        
+        
         
         
         <dependent-module archiveName="Datos.jar" deploy-path="/" handle="module:/resource/Datos/Datos">
-                                                
+                                                                        
+            
+            
             
             
             <dependent-object/>
-                                                
+                                                                        
+            
+            
             
             
             <dependency-type>uses</dependency-type>
-                                            
+                                                                    
+        
+        
+        
+        
+        </dependent-module>
+                                                
+        
+        
+        
+        
+        <dependent-module archiveName="Negocios.jar" deploy-path="/" handle="module:/resource/Negocios/Negocios">
+                                                                        
+            
+            
+            
+            
+            <dependent-object/>
+                                                                        
+            
+            
+            
+            
+            <dependency-type>uses</dependency-type>
+                                                                    
+        
+        
         
         
         </dependent-module>
                                 
         
         
-        <dependent-module archiveName="Negocios.jar" deploy-path="/" handle="module:/resource/Negocios/Negocios">
+        <dependent-module archiveName="PresentacionWeb.war" deploy-path="/" handle="module:/resource/PresentacionWeb/PresentacionWeb">
                                                 
             
             
@@ -39,23 +75,31 @@
         
         
         </dependent-module>
-                
-        <dependent-module archiveName="PresentacionWeb.war" deploy-path="/" handle="module:/resource/PresentacionWeb/PresentacionWeb">
                         
-            <dependent-object/>
-                        
-            <dependency-type>uses</dependency-type>
-                    
-        </dependent-module>
+        
         <dependent-module archiveName="testCliente.jar" deploy-path="/" handle="module:/resource/testCliente/testCliente">
+                                    
+            
+            <dependent-object/>
+                                    
+            
+            <dependency-type>uses</dependency-type>
+                                
+        
+        </dependent-module>
+        <dependent-module archiveName="Ejercicio5_WebService.war" deploy-path="/" handle="module:/resource/Ejercicio5_WebService/Ejercicio5_WebService">
             <dependent-object/>
             <dependency-type>uses</dependency-type>
         </dependent-module>
-                            
+                                            
+    
+    
     
     
     </wb-module>
-            
+                    
+
+
 
 
 </project-modules>

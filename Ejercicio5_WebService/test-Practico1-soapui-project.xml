@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="82ae1828-a9e7-4378-95e9-361dadf5be0d" activeEnvironment="Default" name="test-Practico1" resourceRoot="" soapui-version="5.5.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="a49a015f-4e1a-4305-8358-36312b31912b" wsaVersion="NONE" name="ListarElementosServiceSoapBinding" type="wsdl" bindingName="{http://webservice/}ListarElementosServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/Ejercicio5_WebService/ListarElementos?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8080/Ejercicio5_WebService/ListarElementos?wsdl"><con:part><con:url>http://localhost:8080/Ejercicio5_WebService/ListarElementos?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="ListarElementosService" targetNamespace="http://webservice/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://webservice/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http">
+  <wsdl:types>
+    <xs:schema elementFormDefault="unqualified" targetNamespace="http://webservice/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="addRecursoNegocio" type="tns:addRecursoNegocio"/>
+      <xs:element name="addRecursoNegocioResponse" type="tns:addRecursoNegocioResponse"/>
+      <xs:element name="getRecursos" type="tns:getRecursos"/>
+      <xs:element name="getRecursosDeTipo" type="tns:getRecursosDeTipo"/>
+      <xs:element name="getRecursosDeTipoResponse" type="tns:getRecursosDeTipoResponse"/>
+      <xs:element name="getRecursosResponse" type="tns:getRecursosResponse"/>
+      <xs:element name="getTiposDeRecursos" type="tns:getTiposDeRecursos"/>
+      <xs:element name="getTiposDeRecursosResponse" type="tns:getTiposDeRecursosResponse"/>
+      <xs:complexType name="getRecursosDeTipo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getRecursosDeTipoResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:dtRecursos"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="dtRecursos">
+        <xs:sequence>
+          <xs:element name="cantidad" type="xs:double"/>
+          <xs:element minOccurs="0" name="codigo" type="xs:string"/>
+          <xs:element minOccurs="0" name="descripcionTipoRecurso" type="xs:string"/>
+          <xs:element minOccurs="0" name="nombreTipoRecurso" type="xs:string"/>
+          <xs:element name="precioReferenciaTipoRecurso" type="xs:double"/>
+          <xs:element name="precioUnitario" type="xs:double"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getRecursos">
+        <xs:sequence/>
+      </xs:complexType>
+      <xs:complexType name="getRecursosResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:dtRecursos"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="addRecursoNegocio">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+          <xs:element name="arg1" type="xs:double"/>
+          <xs:element name="arg2" type="xs:double"/>
+          <xs:element minOccurs="0" name="arg3" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="addRecursoNegocioResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getTiposDeRecursos">
+        <xs:sequence/>
+      </xs:complexType>
+      <xs:complexType name="getTiposDeRecursosResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:dtTipoDeRecurso"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="dtTipoDeRecurso">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="descripcion" type="xs:string"/>
+          <xs:element minOccurs="0" name="nombre" type="xs:string"/>
+          <xs:element name="precioReferencia" type="xs:double"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="getRecursosDeTipo">
+    <wsdl:part element="tns:getRecursosDeTipo" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getRecursosDeTipoResponse">
+    <wsdl:part element="tns:getRecursosDeTipoResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addRecursoNegocio">
+    <wsdl:part element="tns:addRecursoNegocio" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getRecursosResponse">
+    <wsdl:part element="tns:getRecursosResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getRecursos">
+    <wsdl:part element="tns:getRecursos" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addRecursoNegocioResponse">
+    <wsdl:part element="tns:addRecursoNegocioResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTiposDeRecursosResponse">
+    <wsdl:part element="tns:getTiposDeRecursosResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTiposDeRecursos">
+    <wsdl:part element="tns:getTiposDeRecursos" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="IListarElementos">
+    <wsdl:operation name="getRecursosDeTipo">
+      <wsdl:input message="tns:getRecursosDeTipo" name="getRecursosDeTipo"></wsdl:input>
+      <wsdl:output message="tns:getRecursosDeTipoResponse" name="getRecursosDeTipoResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRecursos">
+      <wsdl:input message="tns:getRecursos" name="getRecursos"></wsdl:input>
+      <wsdl:output message="tns:getRecursosResponse" name="getRecursosResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addRecursoNegocio">
+      <wsdl:input message="tns:addRecursoNegocio" name="addRecursoNegocio"></wsdl:input>
+      <wsdl:output message="tns:addRecursoNegocioResponse" name="addRecursoNegocioResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTiposDeRecursos">
+      <wsdl:input message="tns:getTiposDeRecursos" name="getTiposDeRecursos"></wsdl:input>
+      <wsdl:output message="tns:getTiposDeRecursosResponse" name="getTiposDeRecursosResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ListarElementosServiceSoapBinding" type="tns:IListarElementos">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getRecursosDeTipo">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getRecursosDeTipo">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getRecursosDeTipoResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRecursos">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getRecursos">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getRecursosResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addRecursoNegocio">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="addRecursoNegocio">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addRecursoNegocioResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTiposDeRecursos">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getTiposDeRecursos">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getTiposDeRecursosResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ListarElementosService">
+    <wsdl:port binding="tns:ListarElementosServiceSoapBinding" name="Servicio WebPort">
+      <soap:address location="http://localhost:8080/Ejercicio5_WebService/ListarElementos"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/Ejercicio5_WebService/ListarElementos</con:endpoint></con:endpoints><con:operation id="17563dcf-a35f-4b27-a8ce-31e34a4f90d4" isOneWay="false" action="" name="addRecursoNegocio" bindingOperationName="addRecursoNegocio" type="Request-Response" outputName="addRecursoNegocioResponse" inputName="addRecursoNegocio" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="38df5e72-ce4a-4b4e-8893-cc5af8d215e2" name="Nuevo Recurso 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/Ejercicio5_WebService/ListarElementos</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://webservice/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <web:addRecursoNegocio>\r
+         <!--RECURSO EXITOSO DE TIPO COMESTIBLE:-->\r
+         <arg0>2</arg0>\r  <!--Codigo:-->
+         <arg1>25</arg1>\r <!--Precio Unitario:-->
+         <arg2>50</arg2>\r <!--Cantidad:-->
+         <arg3>Comestible</arg3>\r <!--Nombre tipo recurso:-->
+      </web:addRecursoNegocio>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://webservice/IListarElementos/addRecursoNegocio"/><con:wsrmConfig version="1.2"/></con:call><con:call id="79e6d76e-3e1e-47e2-b759-4d8fd56318c1" name="Nuevo Recurso 2"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/Ejercicio5_WebService/ListarElementos</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://webservice/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <web:addRecursoNegocio>\r
+          <!--RECURSO EXITOSO DE TIPO COMESTIBLE:-->
+         <!--Codigo:-->
+         <arg0>3</arg0>  
+         <!--Precio Unitario:-->
+         <arg1>30</arg1> 
+         <!--Cantidad:-->
+         <arg2>59</arg2> 
+         <!--Nombre tipo recurso:-->
+         <arg3>Bebida</arg3>
+      </web:addRecursoNegocio>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://webservice/IListarElementos/addRecursoNegocio"/><con:wsrmConfig version="1.2"/></con:call><con:call id="4ae34ed8-c5a2-4621-9afa-71a4318abf74" name="Nuevo Recurso 3"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/Ejercicio5_WebService/ListarElementos</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://webservice/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <web:addRecursoNegocio>\r
+         <!--RECURSO EXITOSO DE TIPO COMESTIBLE:-->
+        <!--Codigo:-->
+        <arg0>4</arg0>
+  		<!--Precio Unitario:-->
+         <arg1>37</arg1>
+ 		<!--Cantidad:-->
+         <arg2>100</arg2>
+ 		 <!--Nombre tipo recurso:-->
+         <arg3>Comestible</arg3>
+		
+      </web:addRecursoNegocio>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://webservice/IListarElementos/addRecursoNegocio"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="0420ce11-0f90-4aef-993a-4829f050260b" isOneWay="false" action="" name="getRecursos" bindingOperationName="getRecursos" type="Request-Response" outputName="getRecursosResponse" inputName="getRecursos" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="1030c716-1533-4706-8ebe-7891646c6375" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/Ejercicio5_WebService/ListarElementos</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://webservice/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <web:getRecursos/>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://webservice/IListarElementos/getRecursos"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="5675cfdb-596b-4470-891b-19ff9a1a3a85" isOneWay="false" action="" name="getRecursosDeTipo" bindingOperationName="getRecursosDeTipo" type="Request-Response" outputName="getRecursosDeTipoResponse" inputName="getRecursosDeTipo" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="d65004c4-001b-482d-bb2e-85666b5d6c5c" name="Ver Recursos Comestibles"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/Ejercicio5_WebService/ListarElementos</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://webservice/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <web:getRecursosDeTipo>\r
+         <!--Optional:-->\r
+         <arg0>Comestible</arg0>\r
+      </web:getRecursosDeTipo>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://webservice/IListarElementos/getRecursosDeTipo"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="7066d8cf-91c5-470e-8d8c-365e2d78e061" isOneWay="false" action="" name="getTiposDeRecursos" bindingOperationName="getTiposDeRecursos" type="Request-Response" outputName="getTiposDeRecursosResponse" inputName="getTiposDeRecursos" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="8bef800c-10b6-4586-9c95-05ede95faa43" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/Ejercicio5_WebService/ListarElementos</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://webservice/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <web:getTiposDeRecursos/>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://webservice/IListarElementos/getTiposDeRecursos"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
